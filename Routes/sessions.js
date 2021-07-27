@@ -26,9 +26,6 @@ router.get('/:session_id', async (req, res, next) => {
     var min_time = Infinity;
     var max_time = Math.log(0);
     let partner_name = '';
-    // console.log('min time:', min_time);
-    // console.log('max time:', max_time);
-    // console.log('partner name is:', partner_name);
 
     let clicks_data = functions.clicksData();
     let clicks_per_sessionId = clicks_data[session_id];

@@ -17,10 +17,6 @@ router.use((req, res, next) => {
 // Max time passed till click
 router.get('/:user_id', async (req, res, next) => {
   try {
-    //   if (req.params.user_id != null) {
-    //     req.params.num = 5;
-    //   }
-
     const { user_id } = req.params;
 
     let requestsMap = functions.requestsData();
@@ -28,7 +24,6 @@ router.get('/:user_id', async (req, res, next) => {
 
     if (user_id_map != null) {
       let numOfRequests = user_id_map.length;
-      console.log('numOfRequests: ', numOfRequests);
       let numOfImpressions = 0;
       let numOfClicks = 0;
 
@@ -77,7 +72,6 @@ router.get('/:user_id', async (req, res, next) => {
       let count_win_only = 0;
 
       for (k = 0; k < user_id_map.length; k++) {
-        console.log(user_id_map[k].win);
         if (user_id_map[k].win == 'TRUE') {
           sum_price = sum_price + parseFloat(user_id_map[k].bid);
           count_win_only++;
